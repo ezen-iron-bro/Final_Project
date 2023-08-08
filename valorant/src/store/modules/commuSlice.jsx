@@ -53,8 +53,9 @@ const initialState = localStorage.getItem("communityData")
       no: 4,
       commentNo: 0,
       replyNo: 0,
-      filteredData: [],
+      filteredData: null,
       sortedData: [],
+      error: null,
     };
 
 export const commuSlice = createSlice({
@@ -256,6 +257,7 @@ export const commuSlice = createSlice({
       .addCase(getCommunity.rejected, (state, ations) => {
         state.state = "Rejected";
         state.loading = true;
+        state.error = action.error.message;
       });
     /* .addCase(getTodayHotView.fulfilled, (state, action) => {
         state.filteredData = action.payload;

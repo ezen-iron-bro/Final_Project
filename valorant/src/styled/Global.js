@@ -31,27 +31,5 @@ const GlobalStyle = createGlobalStyle`
   #Home {
     overflow: hidden;
   }
-
-  .swiper {
-  width: 100%;
-  height: 100%;
-  --swiper-theme-color : #ece8e1
-  }
-
-  .swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    background: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .swiper-slide img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
 `;
 export default GlobalStyle;
