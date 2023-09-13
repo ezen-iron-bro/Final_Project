@@ -7,30 +7,6 @@ export const getCommunity = createAsyncThunk("community/getCommunity", async () 
   );
   return res.data;
 });
-/* export const getTodayHotView = createAsyncThunk("community/getTodayHotView", async () => {
-  const currentTime = new Date().getTime();
-  const twentyFourHours = 24 * 60 * 60 * 1000;
-  const res = await axios.get(
-    "https://gist.githubusercontent.com/habi-er/e3cb49b98333e0590fb9a55ea65c002f/raw/8a6df924b1dd0bdd907915820eccec651cb3a501/communityData.json"
-  );
-  const filteredData = res.data.filter(post => currentTime - new Date(post.date).getTime() <= twentyFourHours);
-  const sortedData = filteredData.slice().sort((a, b) => b.viewCount - a.viewCount);
-  console.log(sortedData);
-
-  return sortedData.slice(0, 10);
-});
-
-export const getTodayHotComment = createAsyncThunk("community/getTodayHotComment", async () => {
-  const currentTime = new Date().getTime();
-  const twentyFourHours = 24 * 60 * 60 * 1000;
-  const res = await axios.get(
-    "https://gist.githubusercontent.com/habi-er/e3cb49b98333e0590fb9a55ea65c002f/raw/8a6df924b1dd0bdd907915820eccec651cb3a501/communityData.json"
-  );
-  const filteredData = res.data.filter(post => currentTime - new Date(post.date).getTime() <= twentyFourHours);
-  const sortedData = filteredData.slice().sort((a, b) => b.comment.length - a.comment.length);
-  console.log(sortedData);
-  return sortedData.slice(0, 10);
-}); */
 const initialState = localStorage.getItem("communityData")
   ? JSON.parse(localStorage.getItem("communityData"))
   : {
@@ -54,8 +30,9 @@ const initialState = localStorage.getItem("communityData")
       commentNo: 0,
       replyNo: 0,
       filteredData: null,
-      sortedData: [],
       error: null,
+      sortedByComments: [],
+      sortedByViews: [],
     };
 
 export const commuSlice = createSlice({
@@ -246,27 +223,18 @@ export const commuSlice = createSlice({
   extraReducers: builder => {
     builder
       .addCase(getCommunity.pending, (state, action) => {
-        state.state = "Loading";
-        state.loading = true;
+        state.loadingData = true;
       })
       .addCase(getCommunity.fulfilled, (state, action) => {
-        state.state = "Fulfilled";
-        state.loading = false;
+        state.loadingData = false;
         state.data = action.payload;
+        state.sortedByComments = [...state.data].sort((a, b) => b.comment.length - a.comment.length);
+        state.sortedByViews = [...state.data].sort((a, b) => b.viewCount - a.viewCount);
       })
-      .addCase(getCommunity.rejected, (state, ations) => {
-        state.state = "Rejected";
-        state.loading = true;
+      .addCase(getCommunity.rejected, (state, action) => {
+        state.loadingData = false;
         state.error = action.error.message;
       });
-    /* .addCase(getTodayHotView.fulfilled, (state, action) => {
-        state.filteredData = action.payload;
-        state.loading = false;
-      })
-      .addCase(getTodayHotComment.fulfilled, (state, action) => {
-        state.filteredData = action.payload;
-        state.loading = false;
-      }); */
   },
 });
 

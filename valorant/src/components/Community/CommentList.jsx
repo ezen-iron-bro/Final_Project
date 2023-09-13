@@ -1,6 +1,6 @@
 import { CommentListContainer } from "../../styled/valorantStyled";
 import CommentItem from "./CommentItem";
-const CommentList = ({ comment,detailItem }) => {
+const CommentList = ({ comment, detailItem }) => {
   return (
     <CommentListContainer className="comment-sort">
       <ul className="sort-list">
