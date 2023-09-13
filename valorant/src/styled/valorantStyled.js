@@ -1095,6 +1095,9 @@ export const SignUpContainer = styled.div`
               top: 50%;
               transform: translateY(-50%);
               transition: all 0.3s;
+              &.on {
+                display: none;
+              }
             }
             span {
               position: absolute;
