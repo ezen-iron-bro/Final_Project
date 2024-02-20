@@ -28,7 +28,6 @@ const HomeAgents = () => {
       const TextTop = rect.top + window.scrollY;
       const viewportBottom = window.innerHeight + window.scrollY;
       if (viewportBottom > TextTop) {
-        console.log(TextTop);
         setTextPosition(0);
       }
     }

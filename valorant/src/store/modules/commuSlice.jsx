@@ -5,15 +5,25 @@ export const getCommunity = createAsyncThunk("community/getCommunity", async () 
   const res = await axios.get(
     "https://gist.githubusercontent.com/habi-er/e3cb49b98333e0590fb9a55ea65c002f/raw/8a6df924b1dd0bdd907915820eccec651cb3a501/communityData.json"
   );
+  res.data.sort((a, b) => (new Date(b.date) - new Date(a.date)));
   return res.data;
 });
+const isWithin24Hours = (date) => {
+  const now = new Date();
+  const posted = new Date(date);
+  const differenceInMs = now.getTime() - posted.getTime();
+  return differenceInMs < 24 * 60 * 60 * 1000; // 24시간을 밀리초로 변환
+};
 const initialState = localStorage.getItem("communityData")
-  ? JSON.parse(localStorage.getItem("communityData"))
+  ? {
+      ...JSON.parse(localStorage.getItem("communityData")),
+      postsFromLast24Hours: JSON.parse(localStorage.getItem("communityData")).data.filter(post => isWithin24Hours(post.date))
+    }
   : {
       data: [],
       newData: {
         title: "",
-        category: "",
+        category: "ValCom기획",
         date: "",
         Author: "",
         content: "",
@@ -26,13 +36,14 @@ const initialState = localStorage.getItem("communityData")
       },
       loading: true,
       state: null,
-      no: 4,
+      no: 11,
       commentNo: 0,
       replyNo: 0,
       filteredData: null,
       error: null,
       sortedByComments: [],
       sortedByViews: [],
+      postsFromLast24Hours: [],
     };
 
 export const commuSlice = createSlice({
@@ -69,8 +80,10 @@ export const commuSlice = createSlice({
     onListAdd(state, action) {
       const { newData, userId } = action.payload;
       const today = new Date();
-      const date = today.toISOString().substring(0, 10);
-      state.data.push({
+      const koreanTimeOffset = 9 * 60 * 60 * 1000; // 한국은 UTC+9
+      const koreanDate = new Date(today.getTime() + koreanTimeOffset);
+      const date = koreanDate.toISOString().substring(0, 10);
+      const newPost = {
         ...newData,
         id: state.no++,
         date,
@@ -81,7 +94,9 @@ export const commuSlice = createSlice({
         likeCount: 0,
         hateCount: 0,
         comment: [],
-      });
+      };
+      // 새로운 게시물을 배열의 맨 앞에 추가
+      state.data = [newPost, ...state.data];
       localStorage.setItem("communityData", JSON.stringify(state));
     },
     changeInput(state, action) {
@@ -196,7 +211,6 @@ export const commuSlice = createSlice({
       localStorage.setItem("communityData", JSON.stringify(state));
     },
     categorySort(state, action) {
-      console.log(action.payload);
       if (action.payload === "전체") {
         state.filteredData = null;
       } else {
@@ -228,8 +242,7 @@ export const commuSlice = createSlice({
       .addCase(getCommunity.fulfilled, (state, action) => {
         state.loadingData = false;
         state.data = action.payload;
-        state.sortedByComments = [...state.data].sort((a, b) => b.comment.length - a.comment.length);
-        state.sortedByViews = [...state.data].sort((a, b) => b.viewCount - a.viewCount);
+        state.postsFromLast24Hours = action.payload.filter(post => isWithin24Hours(post.date));
       })
       .addCase(getCommunity.rejected, (state, action) => {
         state.loadingData = false;

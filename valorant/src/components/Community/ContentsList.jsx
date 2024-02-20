@@ -11,14 +11,10 @@ const ContentsList = () => {
   const dispatch = useDispatch();
   const [isOpen, setIsOpen] = useState(false);
   useEffect(() => {
-    const storedIsOpen = localStorage.getItem("isOpen") ? JSON.parse(localStorage.getItem("isOpen")) : isOpen;
-    if (!storedIsOpen) {
+    if (data.length === 0) {
       dispatch(getCommunity());
-      setIsOpen(true);
-      localStorage.setItem("isOpen", JSON.stringify(true));
     }
-  }, []);
-
+  }, [dispatch, data]);
   if (status === "loading") {
     return <div>Loading...</div>;
   }

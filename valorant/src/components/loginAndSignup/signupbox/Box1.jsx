@@ -13,18 +13,18 @@ const Box1 = ({ handleNext }) => {
       <div className="signup-box-content">
         <ul>
           <li>
-            <input type="checkbox" id="service-consent" checked={isServiceChk} />
-            <label class="checkbox-label" htmlFor="service-consent" onClick={() => setIsServiceChk(!isServiceChk)}>
-              <span class="checkbox-text">
+            <input type="checkbox" id="service-consent" checked={isServiceChk} onChange={() => setIsServiceChk(!isServiceChk)}/>
+            <label className="checkbox-label" htmlFor="service-consent">
+              <span className="checkbox-text">
                 <strong>발로란트 서비스 약관</strong>에 동의 (필수)
               </span>
-              <span class="link-wrapper">
-                <button class="consent-link">
+              <span className="link-wrapper">
+                <button className="consent-link">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                     <rect width="24" height="24" rx="8" fill="#F2F2F2"></rect>
                     <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
+                      fillRule="evenodd"
+                      clipRule="evenodd"
                       d="M9.12513 8.26745L9.12513 6.26745L17.66 6.26745L17.66 6.2731L17.6606 6.2731L17.6606 14.803L15.6606 14.803L15.6606 9.73946L8.00376 17.3963L6.58955 15.9821L14.3042 8.26745L9.12513 8.26745Z"
                     ></path>
                   </svg>
@@ -33,22 +33,22 @@ const Box1 = ({ handleNext }) => {
             </label>
           </li>
           <li>
-            <input type="checkbox" id="personal-info-consent" checked={isPersonalChk} />
+            <input type="checkbox" id="personal-info-consent" checked={isPersonalChk} onChange={() => setIsPersonalChk(!isPersonalChk)}/>
             <label
-              class="checkbox-label"
+              className="checkbox-label"
               htmlFor="personal-info-consent"
-              onClick={() => setIsPersonalChk(!isPersonalChk)}
+              
             >
-              <span class="checkbox-text">
+              <span className="checkbox-text">
                 <strong>개인정보 수집 및 이용</strong>에 동의 (필수)
               </span>
-              <span class="link-wrapper">
-                <button class="consent-link">
+              <span className="link-wrapper">
+                <button className="consent-link">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                     <rect width="24" height="24" rx="8" fill="#F2F2F2"></rect>
                     <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
+                      fillRule="evenodd"
+                      clipRule="evenodd"
                       d="M9.12513 8.26745L9.12513 6.26745L17.66 6.26745L17.66 6.2731L17.6606 6.2731L17.6606 14.803L15.6606 14.803L15.6606 9.73946L8.00376 17.3963L6.58955 15.9821L14.3042 8.26745L9.12513 8.26745Z"
                     ></path>
                   </svg>
@@ -57,22 +57,22 @@ const Box1 = ({ handleNext }) => {
             </label>
           </li>
           <li>
-            <input type="checkbox" id="overseas-relocation-consent" checked={isRelocationChk} />
+            <input type="checkbox" id="overseas-relocation-consent" checked={isRelocationChk} onChange={() => setIsRelocationChk(!isRelocationChk)}/>
             <label
-              class="checkbox-label"
+              className="checkbox-label"
               htmlFor="overseas-relocation-consent"
-              onClick={() => setIsRelocationChk(!isRelocationChk)}
+              
             >
-              <span class="checkbox-text">
+              <span className="checkbox-text">
                 <strong>개인정보 국외 이전</strong>에 동의 (필수)
               </span>
-              <span class="link-wrapper">
-                <button class="consent-link">
+              <span className="link-wrapper">
+                <button className="consent-link">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                     <rect width="24" height="24" rx="8" fill="#F2F2F2"></rect>
                     <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
+                      fillRule="evenodd"
+                      clipRule="evenodd"
                       d="M9.12513 8.26745L9.12513 6.26745L17.66 6.26745L17.66 6.2731L17.6606 6.2731L17.6606 14.803L15.6606 14.803L15.6606 9.73946L8.00376 17.3963L6.58955 15.9821L14.3042 8.26745L9.12513 8.26745Z"
                     ></path>
                   </svg>

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import NavBar from "./NavBar";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../store/modules/authSlice";
-const Header = ({ isPopupShow, setIsPopupShow }) => {
+const Header = ({ setIsPopupShow }) => {
   const [isSearchShow, setIsSearchShow] = useState(false);
   const { currentUser, authed } = useSelector(state => state.auth);
   const [isUserShow, setIsUserShow] = useState();

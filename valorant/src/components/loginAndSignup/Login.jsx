@@ -8,24 +8,28 @@ import { IoLogoXbox } from "react-icons/io";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { login } from "../../store/modules/authSlice";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 const Login = () => {
-  const { user, authed, loginFailed } = useSelector(state => state.auth);
+  const { user,authed, loginFailed } = useSelector(state => state.auth);
   const [userID, setUserID] = useState("");
   const [userPassword, setUserPassword] = useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const onSubmit = async e => {
-    e.preventDefault();
-
-    if (!userID || !userPassword) {
-      return;
-    } else {
-      dispatch(login({ userId: userID, userPwd: userPassword }));
+  useEffect(() => {
+    // 로그인이 성공한 경우 메인 페이지로 이동
+    if (authed) {
       navigate("/");
     }
-  };
+  }, [authed, navigate]);
 
+  const onSubmit = e => {
+    e.preventDefault();
+    if (!userID || !userPassword) {
+      alert("아이디와 비밀번호를 입력하세요.");
+    } else {
+      dispatch(login({ userId: userID, userPwd: userPassword }));
+    }
+  };
   return (
     <LoginContainer>
       <div className="login-header">
@@ -44,7 +48,7 @@ const Login = () => {
               type="text"
               value={userID}
               onChange={e => setUserID(e.target.value)}
-              className={loginFailed && "on"}
+              className={loginFailed ? "on" : undefined}
             />
             <label htmlFor="user-id" className={userID !== "" ? "on" : ""}>
               계정이름
@@ -56,7 +60,7 @@ const Login = () => {
               type="password"
               value={userPassword}
               onChange={e => setUserPassword(e.target.value)}
-              className={loginFailed && "on"}
+              className={loginFailed ? "on" : undefined}
             />
             <label htmlFor="user-password" className={userPassword !== "" ? "on" : ""}>
               비밀번호
@@ -96,7 +100,7 @@ const Login = () => {
           </button>
         </form>
         <div className="help-text">
-          <Link to="/help">
+          <Link to="/signup">
             <p>로그인이 안되시나요?</p>
           </Link>
           <Link to="/signup">
