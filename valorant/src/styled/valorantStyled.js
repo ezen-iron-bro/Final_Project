@@ -3153,8 +3153,6 @@ export const CommuWritingContainer = styled.div`
         option {
           font-weight: normal;
           display: block;
-          white-space-collapse: collapse;
-          text-wrap: nowrap;
           min-height: 1.2em;
           padding: 0px 2px 1px;
         }
@@ -6257,6 +6255,15 @@ export const MediaContainer = styled.div`
 
       .media-box {
         position: relative;
+        .swiper-slide {
+          img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+
         .swiper-button-prev {
           top: var(--swiper-navigation-top-offset, 96%);
           left: var(--swiper-navigation-sides-offset, 28%);
