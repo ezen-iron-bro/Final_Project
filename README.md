@@ -69,6 +69,8 @@
 ![media](https://github.com/ezen-iron-bro/Final_project/assets/133613789/5a9a90af-9fe3-4b92-afc3-97004c284905)
 
 - display : grid로 구현
+- Fisher-Yates 알고리즘을 사용하여 렌더링시마다 무작위 shuffle 기능 구현
+- 각 item 클릭시 이미지 popup 및 slide 기능 제공
 
 ### 5. 순위표
 
