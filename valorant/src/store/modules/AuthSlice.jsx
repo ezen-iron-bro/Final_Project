@@ -21,7 +21,7 @@ export const authSlice = createSlice({
     },
     login(state, action) {
       const { userId, userPwd } = action.payload;
-      const user = state.users.find(user => user.userId === userId && user.userPwd === userPwd);
+      const user = state.users.find((user) => user.userId === userId && user.userPwd === userPwd);
       if (user) {
         state.currentUser = user;
         state.authed = true;
@@ -37,7 +37,7 @@ export const authSlice = createSlice({
       localStorage.setItem("valorantUser", JSON.stringify(state));
     },
   },
-  extraReducers: builder => {
+  extraReducers: (builder) => {
     builder;
   },
 });
