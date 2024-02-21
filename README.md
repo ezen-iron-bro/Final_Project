@@ -12,7 +12,7 @@
 ## 멤버 구성
 
 - [김기철](https://github.com/habi-er) - 메인, 순위표, 커뮤니티, 로그인/회원가입
-- [이원철](https://github.com/wonchuring) - 미디어, 순위표, 굿즈
+- [이원철](https://github.com/wonchuring) - 게임정보, 미디어, 굿즈
 
 ## 기술 스택
 
@@ -48,13 +48,15 @@
 
 ### 3. 게임정보
 
-1. 요원  
+1. 요원
 
    ![gameinfo-agents](https://github.com/ezen-iron-bro/Final_project/assets/133613789/40ea4ef2-172a-4783-9b7d-69d4a931ddf4)
-2. 맵  
+
+2. 맵
 
    ![gameinfo-maps](https://github.com/ezen-iron-bro/Final_project/assets/133613789/528cce53-f5e6-4b36-8583-bbe19d95bd74)
-3. 무기고  
+
+3. 무기고
 
    ![gameinfo-weppon](https://github.com/ezen-iron-bro/Final_project/assets/133613789/5d644a7e-10bf-4284-9bba-b204101ea8c0)
 
@@ -63,6 +65,8 @@
 - UI 향상에 집중된 CSS를 경험
 
 ### 4. 미디어
+
+![media](https://github.com/ezen-iron-bro/Final_project/assets/133613789/5a9a90af-9fe3-4b92-afc3-97004c284905)
 
 - display : grid로 구현
 
