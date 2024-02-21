@@ -6271,12 +6271,11 @@ export const MediaContainer = styled.div`
         .swiper-slide {
           img {
             display: block;
-            width: 100%;
             height: 100%;
+            width: 100%;
             object-fit: cover;
           }
         }
-
         .swiper-button-prev {
           top: var(--swiper-navigation-top-offset, 96%);
           left: var(--swiper-navigation-sides-offset, 28%);
@@ -7392,7 +7391,6 @@ export const MapInfoContainer = styled.div`
             overflow: visible;
 
             .swiper-wrapper {
-              height: 3000px;
               .swiper-slide {
                 cursor: grab;
                 justify-content: left;
