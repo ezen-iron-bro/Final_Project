@@ -52,7 +52,6 @@ const ContentHeader = () => {
                 name="target"
                 className="sub-header-search-select"
                 id="search-target"
-                defaultValue="title-content"
                 value={searchType}
                 onChange={e => setSearchType(e.target.value)}
               >

@@ -21,7 +21,6 @@ const CommuWriting = () => {
     dispatch(changeInput({ name: "title", value: "" }));
     dispatch(changeInput({ name: "content", value: "" }));
     navigate("/community");
-    console.log(data);
   };
   return (
     <>

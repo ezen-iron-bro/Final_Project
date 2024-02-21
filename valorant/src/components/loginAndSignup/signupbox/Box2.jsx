@@ -42,9 +42,15 @@ const Box2 = ({ handleNext, userID, setUserID }) => {
   const onChangeConfirmPwd = e => {
     const currConfirmPwd = e.target.value;
     setConfirmPwd(currConfirmPwd);
+    if (password !== currConfirmPwd){
+      setPwdMsg("비밀번호가 서로 다릅니다. 다시 확인해주세요.")
+    }else {
+      setPwdMsg("안전한 비밀번호입니다.")
+    }
   };
   const onSubmit = e => {
     e.preventDefault();
+    if (!isUserIDValid || !isPwdValid || !isConfirmPwd) return alert("아이디 및 비밀번호를 입력해주시기 바랍니다.");
     dispatch(signup({ userId: userID, userPwd: password }));
     handleNext();
   };
@@ -57,19 +63,25 @@ const Box2 = ({ handleNext, userID, setUserID }) => {
       <form className="signup-form" onSubmit={onSubmit}>
         <div className="signup-id">
           <input type="text" id="user-id" onChange={onChangeUserID} value={userID} />
-          <label htmlFor="user-id">아이디</label>
+          <label htmlFor="user-id" className={userID !== "" ? "on" : ""}>
+            아이디
+          </label>
           <span>아이디</span>
         </div>
         <p className="signup-hint">{userIDMsg}</p>
         <div className="signup-pw">
           <input type="password" id="user-password" onChange={onChangePwd} value={password} />
 
-          <label htmlFor="user-password">비밀번호</label>
+          <label htmlFor="user-password" className={password !== "" ? "on" : ""}>
+            비밀번호
+          </label>
           <span>비밀번호</span>
         </div>
         <div className="signup-pw-confirm">
           <input type="password" id="user-password2" onChange={onChangeConfirmPwd} value={confirmPwd} />
-          <label htmlFor="user-password2">비밀번호 확인</label>
+          <label htmlFor="user-password2" className={confirmPwd !== "" ? "on" : ""}>
+            비밀번호 확인
+          </label>
           <span>비밀번호 확인</span>
         </div>
         <p className="signup-hint">{pwdMsg}</p>

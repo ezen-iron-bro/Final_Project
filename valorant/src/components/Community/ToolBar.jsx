@@ -18,7 +18,7 @@ const formats = [
   "font",
   "size",
   "bold",
-  "Italic",
+  "italic",
   "underline",
   "strike",
   "align",

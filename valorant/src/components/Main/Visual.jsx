@@ -1,6 +1,10 @@
 import React from "react";
 import { VisualContainer } from "../../styled/valorantStyled";
-const Visual = () => {
+import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+const Visual = ( {setIsPopupShow}) => {
+  const { authed } = useSelector(state => state.auth)
+  const  navigate = useNavigate()
   return (
     <VisualContainer id="visual">
       <div className="visual-video">
@@ -8,7 +12,7 @@ const Visual = () => {
           preload="true"
           muted
           loop
-          playsinline=""
+          playsInline=""
           autoPlay
           poster="https://images.contentstack.io/v3/assets/bltb6530b271fddd0b1/bltb914ab2eb409025a/6494cf0a71e092fafde8e382/Valorant_Deadlock_Homepage_Thumbnail.jpg"
           data-testid="hero:video"
@@ -30,7 +34,7 @@ const Visual = () => {
           </div>
           <p>5대5 캐릭터 기반 전술 슈팅 게임</p>
         </div>
-        <button className="download-btn">
+        <button className="download-btn" type='button' onClick={() =>{ authed ? navigate("/download") : alert("로그인 후 이용하실 수 있는 서비스입니다.\n우측 상단의『지금 플레이하기』를 누르고, \n 회원가입 또는 로그인을 진행해주세요.")}}>
           <div className="btn-style">
             <span className="hover-mask"></span>
             <span className="btn-text">무료로 플레이하기</span>
