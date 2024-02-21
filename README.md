@@ -12,7 +12,7 @@
 ## 멤버 구성
 
 - [김기철](https://github.com/habi-er) - 메인, 순위표, 커뮤니티, 로그인/회원가입
-- [이원철](https://github.com/wonchuring) - 게임정보, 미디어, 굿즈
+- [이원철](https://github.com/daylilyyy) - 게임정보, 미디어, 굿즈
 
 ## 기술 스택
 
