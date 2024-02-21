@@ -42,6 +42,11 @@ const Box2 = ({ handleNext, userID, setUserID }) => {
   const onChangeConfirmPwd = e => {
     const currConfirmPwd = e.target.value;
     setConfirmPwd(currConfirmPwd);
+    if (password !== currConfirmPwd){
+      setPwdMsg("비밀번호가 서로 다릅니다. 다시 확인해주세요.")
+    }else {
+      setPwdMsg("안전한 비밀번호입니다.")
+    }
   };
   const onSubmit = e => {
     e.preventDefault();

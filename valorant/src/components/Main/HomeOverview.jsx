@@ -146,7 +146,7 @@ const HomeOverview = () => {
                 <div className="ov-play-btn">
                   <div className="ov-video">
                     <div className="ov-video">
-                      <video preload="true" muted loop playsinline="" autoPlay height="100%" width="100%">
+                      <video preload="true" muted loop playsInline="" autoPlay height="100%" width="100%">
                         <source
                           src="https://assets.contentstack.io/v3/assets/bltb6530b271fddd0b1/bltefd45731d8f9d9df/6217f2ea910a6c613c73168c/VALORANT_PLAY22_16x9_Target4_v005.mp4"
                           type="video/mp4"
@@ -156,7 +156,7 @@ const HomeOverview = () => {
                   </div>
                   <button className="ov-icon-wrapper">
                     <div className="ov-icon">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72" xml:space="preserve">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72" xmlSpace="preserve">
                         <path fill="none" stroke="#ece8e1" d="M33.5 34.5v-5l8 6v2l-8 6v-5m28-29-7 7m-38 38-7 7"></path>
                       </svg>
                     </div>

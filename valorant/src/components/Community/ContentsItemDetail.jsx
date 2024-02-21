@@ -15,7 +15,6 @@ const ContentsItemDetail = () => {
   const { userId } = currentUser;
   const dispatch = useDispatch();
   const [inputText, setInputText] = useState("");
-
   const detailItem = data.find(item => item.id === Number(communityID));
   const { id, title, category, date, Author, content, comment, viewCount, islike, ishate, likeCount, hateCount } =
     detailItem;

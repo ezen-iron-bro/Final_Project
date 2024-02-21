@@ -3580,7 +3580,7 @@ export const ContentsItemDetailContainer = styled.div`
       border-top: 1px solid #ebeef1;
       border-bottom: 1px solid #ebeef1;
       text-align: center;
-      button[type="submit"] {
+      button[type="button"] {
         padding: 12px;
         min-width: 88px;
         line-height: 17px;
@@ -4176,6 +4176,7 @@ export const SidebarRightContainer = styled.div`
       font-size: 12px;
       margin: 9px 0 15px;
       display: flex;
+      position: relative;
       li {
         margin-left: 4px;
         display: inline-block;
@@ -4183,6 +4184,17 @@ export const SidebarRightContainer = styled.div`
         border-radius: 11px;
         cursor: pointer;
         border: 1px solid #d13639;
+        color: #d13639;
+      }
+      button {
+        background: none;
+        border: none;
+        position: absolute;
+        right: 20px;
+        top: 70%;
+        transform: translateY(-50%);
+        font-size: 18px;
+        cursor: pointer;
         color: #d13639;
       }
     }
@@ -7379,6 +7391,7 @@ export const MapInfoContainer = styled.div`
             overflow: visible;
 
             .swiper-wrapper {
+              height: 3000px;
               .swiper-slide {
                 cursor: grab;
                 justify-content: left;

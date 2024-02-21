@@ -19,7 +19,6 @@ const LeaderboardsSearch = () => {
     if (!playerName) return alert("검색할 내용을 입력하세요");
     if (player) {
       const playerIndex = leaderboardsData.indexOf(player);
-      console.log(player);
       const playerPageNumber = Math.ceil((playerIndex + 1) / postsPage);
       dispatch(setSearchedPlayer(player));
       dispatch(setCurrentPage(playerPageNumber));
@@ -42,8 +41,8 @@ const LeaderboardsSearch = () => {
             <div className="icon">
               <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
+                  fillRule="evenodd"
+                  clipRule="evenodd"
                   d="m24 21-5.6-5.6A10.058 10.058 0 0 0 20 10a10 10 0 1 0-10 10 10.058 10.058 0 0 0 5.4-1.6L21 24l3-3zM4 10a6 6 0 1 1 6 6 5.89 5.89 0 0 1-6-6z"
                   fill="#0F1923"
                 ></path>

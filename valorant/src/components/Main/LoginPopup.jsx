@@ -7,7 +7,7 @@ const LoginPopup = ({ setIsPopupShow }) => {
       <div className="bg-forPopup" onClick={() => setIsPopupShow(false)}></div>
       <div className="popup-inner">
         <span onClick={() => setIsPopupShow(false)}>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72" xml:space="preserve">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72" xmlSpace="preserve">
             <path
               fill="none"
               stroke="#ece8e1"
