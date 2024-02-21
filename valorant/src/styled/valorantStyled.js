@@ -2709,9 +2709,10 @@ export const HomeAgentsContainer = styled.section`
           width: 122%;
           text-align: center;
           left: auto;
-          right: -9%;
+          right: -30%;
           transform: translateY(0%);
-          background-image: url("/images/main/raze-reyna.png");
+          background-image: url("/images/agent/HeroImages/KillJoy/KillJoy.png");
+          background-repeat: no-repeat;
         }
       }
     }
