@@ -1,0 +1,8 @@
+Q스킬 : 
+https://assets.contentstack.io/v3/assets/bltb6530b271fddd0b1/blta1fbdf10898ac8a4/649497b0f57ecc047c3abf59/AgentPage_Deadlock_Ability_Q.mp4
+E스킬:
+https://assets.contentstack.io/v3/assets/bltb6530b271fddd0b1/blt91ea123447dc4820/649497a91de9c33b380f43aa/AgentPage_Deadlock_Ability_E.mp4
+C스킬 :
+https://assets.contentstack.io/v3/assets/bltb6530b271fddd0b1/blt5ba97cb2d6cab44e/6494969bf57ecc7db03abf4b/AgentPage_Deadlock_Ability_C.mp4
+X스킬 :
+https://assets.contentstack.io/v3/assets/bltb6530b271fddd0b1/bltd02395a7fa554cd1/6494c187edfc646bc3351296/AgentPage_Deadlock_Ability_X_2.mp4

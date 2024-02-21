@@ -1,0 +1,83 @@
+[
+  {
+    "id": 1,
+    "title": "제목1",
+    "category": "자유",
+    "date": "2023-06-30",
+    "Author": "김기철",
+    "content": "나는 신이다",
+    "comment": [
+      {
+        "commentId": 1,
+        "commentText": "ㅇㅈ",
+        "commentAuthor": "킹기철",
+        "commentDate": "2023-06-30",
+        "commentIslike": false,
+        "commentLikeCount": 20,
+        "commentReply": [
+          { "replyId": 1, "replyText": "개ㅇㅈ이지", "replyAuthor": "킹", "replyDate": "2023-06-30" },
+          { "replyId": 2, "replyText": "개ㅇㅈ이지2", "replyAuthor": "기", "replyDate": "2023-06-30" },
+          { "replyId": 3, "replyText": "개ㅇㅈ이지3", "replyAuthor": "철", "replyDate": "2023-06-30" }
+        ]
+      }
+    ],
+    "viewCount": 202020,
+    "islike": false,
+    "ishate": false,
+    "likeCount": 2112
+  },
+  {
+    "id": 2,
+    "title": "제목2",
+    "category": "자유",
+    "date": "2023-06-30",
+    "Author": "촐킴",
+    "content": "나는 신이다",
+    "comment": [
+      {
+        "commentId": 1,
+        "commentText": "ㅇㅈ",
+        "commentAuthor": "킹기철",
+        "commentDate": "2023-06-30",
+        "commentIslike": false,
+        "commentLikeCount": 20,
+        "commentReply": [
+          { "replyId": 1, "replyText": "개ㅇㅈ이지", "replyAuthor": "기", "replyDate": "2023-06-30" },
+          { "replyId": 2, "replyText": "개ㅇㅈ이지2", "replyAuthor": "철", "replyDate": "2023-06-30" },
+          { "replyId": 3, "replyText": "개ㅇㅈ이지3", "replyAuthor": "킹", "replyDate": "2023-06-30" }
+        ]
+      }
+    ],
+    "viewCount": 202020,
+    "islike": false,
+    "ishate": false,
+    "likeCount": 99202
+  },
+  {
+    "id": 3,
+    "title": "제목3",
+    "category": "자유",
+    "date": "2023-06-30",
+    "Author": "리진남",
+    "content": "나는 신이다",
+    "comment": [
+      {
+        "commentId": 1,
+        "commentText": "ㅇㅈ",
+        "commentAuthor": "김기철",
+        "commentDate": "2023-06-30",
+        "commentIslike": false,
+        "commentLikeCount": 20,
+        "commentReply": [
+          { "replyId": 1, "replyText": "개ㅇㅈ이지", "replyAuthor": "철", "replyDate": "2023-06-30" },
+          { "replyId": 2, "replyText": "개ㅇㅈ이지2", "replyAuthor": "킹", "replyDate": "2023-06-30" },
+          { "replyId": 3, "replyText": "개ㅇㅈ이지3", "replyAuthor": "기", "replyDate": "2023-06-30" }
+        ]
+      }
+    ],
+    "viewCount": 202020,
+    "islike": false,
+    "ishate": false,
+    "likeCount": 67292
+  }
+]
