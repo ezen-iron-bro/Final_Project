@@ -6267,7 +6267,6 @@ export const MediaContainer = styled.div`
 
       .media-box {
         position: relative;
-
         .swiper-slide {
           img {
             display: block;
