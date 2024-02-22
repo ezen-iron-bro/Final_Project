@@ -20,11 +20,11 @@
 
 ---
 
-## Demo
+## LINK
 
 ![](https://github.com/ezen-iron-bro/Final_project/assets/133613789/f9d0e765-0753-4692-aa70-786b293e45e7)
 
-[link](https://ezen-iron-bro.github.io/project-view/)
+[link](https://ironbro-valorant.netlify.app/)
 
 ## 주요 기능
 
